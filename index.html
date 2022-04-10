@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="pages">
+    <ul class="pages__listing">
+        {% for post in paginator.posts %}
+        <a href="{{ post.url }}">
+            <h1 class="page__title">{{ post.title }}</h1>
+        </a>
+
+        <i class="page__published">Published {{ post.date | date_to_string }}</i>
+
+        {{ post.excerpt }}
+        {% endfor %}
+    </ul>
+
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a class="pagination__prev" href="{{ paginator.previous_page_path }}">&lt; previous page</a>
+        {% endif %}
+
+        {% if paginator.next_page %}
+        <a class="pagination__next" href="{{ paginator.next_page_path }}">next page &gt;</a>
+        {% endif %}
+    </div>
+</div>

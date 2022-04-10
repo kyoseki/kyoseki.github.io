@@ -1,0 +1,122 @@
+---
+---
+
+@import url(/assets/css/monokai.css);
+
+$accent: #00274e;
+$header-padding: 0.75rem;
+$border: 0.15rem solid rgb(220, 220, 220);
+
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    margin: 0;
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+
+a, a:visited {
+    color: white;
+}
+
+a:hover {
+    color: rgb(220, 220, 220);
+}
+
+
+img {
+    max-width: 100%;
+}
+
+// header & nav
+
+.header {
+    padding: 0.25rem 1rem;
+    padding-bottom: $header-padding;
+
+    background-image: radial-gradient(
+        circle farthest-corner,
+        $accent 0,
+        $accent 20ch,
+        change-color($accent, $alpha: 0.4) 35ch,
+        rgba(0, 0, 0, 0) 50ch
+    ), url("/assets/bg.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    border-bottom: $border;
+
+    text-align: center;
+}
+
+.header__logo {
+    display: inline-block;
+    margin-bottom: 1em;
+
+    img {
+        vertical-align: middle;
+        width: 12ch;
+    }
+}
+
+.nav {
+    display: block;
+}
+
+.nav__link {
+    margin: 0 0.75em;
+}
+
+// content
+
+.content {
+    max-width: 65ch;
+    margin: 0 1em;
+    flex: 1 0 auto;
+    margin: 0 auto;
+}
+
+// footer
+
+.footer {
+    margin-top: 1em;
+    padding: $header-padding 0;
+    border-top: $border;
+    background-color: $accent;
+    text-align: center;
+}
+
+.footer__link {
+    margin: 0 0.5ch;
+    font-size: 1.75rem;
+}
+
+.footer__notes {
+    font-size: 1rem;
+}
+
+// pagination
+
+.pagination__prev {
+    float: left;
+}
+
+.pagination__next {
+    float: right;
+}
+
+// pages
+
+pre {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #333333;
+}
