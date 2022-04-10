@@ -115,6 +115,24 @@ img {
 
 // pages
 
+.page__header,
+.page :is(h1, h2, h3, h4, h5, h6) {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.page__title {
+    margin-bottom: 0.1em;
+}
+
+.page__published, .page__categories {
+    display: block;
+    margin: 0;
+}
+
+.page__category {
+    margin: 0 0.25ch;
+}
+
 pre {
     padding: 0.5em;
     border-radius: 5px;

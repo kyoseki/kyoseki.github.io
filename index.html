@@ -6,6 +6,7 @@ layout: default
     <div class="pages__listing">
         {% for post in paginator.posts %}
         {% include article.html page=post link=true %}
+        <hr>
         {% endfor %}
     </div>
 

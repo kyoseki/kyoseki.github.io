@@ -1,14 +1,22 @@
 <article class="page">
-    {% if include.link %}
-    <a href="{{ include.page.url }}">
+    <div class="page__header">
+        {% if include.link %}
+        <a href="{{ include.page.url }}">
+            <h1 class="page__title">{{ include.page.title }}</h1>
+        </a>
+        {% else %}
         <h1 class="page__title">{{ include.page.title }}</h1>
-    </a>
-    {% else %}
-    <h1 class="page__title">{{ include.page.title }}</h1>
-    {% endif %}
-    {% if include.page.date %}
-    <i class="page__published">Published {{ include.page.date | date_to_string }}</i>
-    {% endif %}
+        {% endif %}
+
+        {% if include.page.date %}
+        <p class="page__published">Published {{ include.page.date | date_to_string }}</p>
+        {% endif %}
+
+        {% if include.page.categories.size > 0 %}
+        <p class="page__categories"><i>Categories: {% for c in include.page.categories %}<u class="page__category">{{ c }}</u>{% endfor %}</i></p>
+        {% else %}
+        {% endif %}
+    </div>
 
     <div class="page__content">
         {{ include.content | default: include.page.content }}
