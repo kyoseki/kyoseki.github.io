@@ -2,13 +2,4 @@
 layout: default
 ---
 
-<article class="page">
-    <h1 class="page__title">{{ page.title }}</h1>
-    {% if page.date %}
-    <i class="page__published">Published {{ page.date | date_to_string }}</i>
-    {% endif %}
-
-    <div class="page__content">
-        {{ content }}
-    </div>
-</article>
+{% include article.html page=page content=content %}

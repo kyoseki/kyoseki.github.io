@@ -1,0 +1,16 @@
+<article class="page">
+    {% if include.link %}
+    <a href="{{ include.page.url }}">
+        <h1 class="page__title">{{ include.page.title }}</h1>
+    </a>
+    {% else %}
+    <h1 class="page__title">{{ include.page.title }}</h1>
+    {% endif %}
+    {% if include.page.date %}
+    <i class="page__published">Published {{ include.page.date | date_to_string }}</i>
+    {% endif %}
+
+    <div class="page__content">
+        {{ include.content | default: include.page.content }}
+    </div>
+</article>
